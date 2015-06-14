@@ -1,6 +1,6 @@
 {
 	"name" : "spekulatius/silverstripe-timezones",
-	"description" : "Provides time zone data as well as a pre-populated dropdown for SilverStripe",
+	"description" : "Provides time zone data as well as a pre-populated dropdown field for SilverStripe",
 	"type" : "silverstripe-module",
 	"license" : "BSD-3-Clause",
 	"keywords" : ["silverstripe","time zone","time zones","data","dropdown"],

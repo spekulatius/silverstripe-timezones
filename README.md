@@ -1,6 +1,6 @@
 # Time zones module
 
-Provides a reusable model and data of the time zones worldwide. In addition a dropdownfield for a time zone selection is included.
+Provides a reusable model and data of the time zones worldwide. In addition a dropdown field for a time zones selection is included.
 
 ## Requirements
 
@@ -9,7 +9,7 @@ Provides a reusable model and data of the time zones worldwide. In addition a dr
 
 ## Installation
 
-For the installation you can either download, unzip the package and run dev build manually or run the following commands in your root directory:
+For the installation you can either download the package, unzip it into your project directory and run dev build manually or run the following commands in your project directory:
 
 ```
 composer require spekulatius/silverstripe-timezones
