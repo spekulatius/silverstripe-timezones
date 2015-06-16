@@ -77,7 +77,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 	 * @param string $text
 	 */
 	protected function message($text) {
-		if(Controller::curr() instanceof DatabaseAdmin) {
+		if (Controller::curr() instanceof DatabaseAdmin) {
 			DB::alteration_message($text, 'obsolete');
 		} else {
 			Debug::message($text);

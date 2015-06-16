@@ -26,7 +26,7 @@ class TimeZone extends DataObject {
 	public function requireDefaultRecords() {
 		parent::requireDefaultRecords();
 
-		if(PopulateTimeZonesTask::config()->run_during_dev_build) {
+		if (PopulateTimeZonesTask::config()->run_during_dev_build) {
 			$task = new PopulateTimeZonesTask();
 			$task->up();
 		}
