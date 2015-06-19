@@ -25,11 +25,17 @@ class TimeZoneField extends DropdownField {
 		// if a source is given it should be a SS_List of TimeZone objects
 		if (!is_null($source) && !is_a($source, "SS_List")) {
 			throw new Exception("\$source must be null to use the provided values, or an SS_List of TimeZone objects");
+			// why return false? when @return void
 			return false;
 		}
 
 		// if no source has been defined we assume the default time zones will be used
 		if (!$source) $source = TimeZone::get();
+
+		// default to setting defined in php configuration
+		if ($defaultTZ = TimeZone::get()->where("Identifier='".date_default_timezone_get()."'")->First()) {
+			if (!$emptyString) parent::setEmptyString($defaultTZ->Title);
+		}
 
 		// leave the actual field
 		parent::__construct(
