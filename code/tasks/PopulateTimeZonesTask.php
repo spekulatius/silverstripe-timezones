@@ -74,6 +74,9 @@ class PopulateTimeZonesTask extends MigrationTask {
 
 			$this->message('Finished adding new time zone entries.');
 		}
+
+		// check if the titles in the dataobjects need to be refreshed
+		if ($this->checkIfTitlesNeedRefresh()) $trhis->rebuildTitles();
 	}
 
 	/**
@@ -83,6 +86,28 @@ class PopulateTimeZonesTask extends MigrationTask {
 		// remove the old time zones
 		$this->message('Removing old time zone entries.');
 		foreach (TimeZone::get() as $tz) $tz->delete();
+	}
+
+	/**
+	 * decides if the titles need to be rebuild
+	 *
+	 * @return boolean
+	 */
+	protected function checkIfTitlesNeedRebuild() {
+		// Assumption is that if the first one ($example) doesn't match (anymore) we need to refresh all.
+		$example = TimeZone::get()->first();
+		return ($example->Title != $example->prepareTitle());
+	}
+
+	/**
+	 * Rebuilds the title in the dataobjects
+	 */
+	protected function rebuildTitles() {
+		// Update the Title field in the dataobjects. This saves the time to build the title dynamically each time.
+		foreach (TimeZone::get() as $tz) {
+			$newTitle = $tz->prepareTitle();
+			if ($newTitle != $tz->Title) $tz->Title = $newTitle; $tz->write();
+		}
 	}
 
 	/**

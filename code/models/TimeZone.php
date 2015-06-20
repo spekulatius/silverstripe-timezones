@@ -31,16 +31,6 @@ class TimeZone extends DataObject {
 			$task = new PopulateTimeZonesTask();
 			$task->up();
 		}
-
-		// Update the Title field in the dataobjects. This saves the time to build the title dynamically each time.
-		// Assumption is that if the first one ($example) doesn't match (anymore) we need to refresh all.
-		$example = TimeZone::get()->first();
-		if ($example->Title != $example->prepareTitle()) {
-			foreach (TimeZone::get() as $tz) {
-				$newTitle = $tz->prepareTitle();
-				if ($newTitle != $tz->Title) $tz->Title = $newTitle; $tz->write();
-			}
-		}
 	}
 
 	/**
