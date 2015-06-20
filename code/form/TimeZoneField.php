@@ -6,6 +6,8 @@
  */
 class TimeZoneField extends DropdownField {
 	/**
+	 * making sure that the styling in the admin section remains as expected.
+	 *
 	 * @var array
 	 */
 	protected $extraClasses = array('dropdown');
@@ -19,13 +21,12 @@ class TimeZoneField extends DropdownField {
 	 * @param string $value = ''
 	 * @param Form $form = null
 	 * @param string $emptyString = null
-	 * @return void
+	 * @return FormField|false
 	 */
 	public function __construct($name, $title = null, $source = null, $value = '', $form = null, $emptyString = null) {
 		// if a source is given it should be a SS_List of TimeZone objects
 		if (!is_null($source) && !is_a($source, "SS_List")) {
 			throw new Exception("\$source must be null to use the provided values, or an SS_List of TimeZone objects");
-			// why return false? when @return void
 			return false;
 		}
 
@@ -38,7 +39,7 @@ class TimeZoneField extends DropdownField {
 		}
 
 		// leave the actual field
-		parent::__construct(
+		return parent::__construct(
 			$name,
 			$title,
 			$source->sort('Title')->map('Identifier', 'Title'),

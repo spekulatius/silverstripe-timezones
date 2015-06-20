@@ -34,8 +34,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 	 * {@inheritdoc}
 	 */
 	public function run($request) {
-		// I think there is a bug in MigrationTask::run()
-		// $request->param('Direction') does not is null
+		// Workaround for bug in MigrationTask::run(). Will be removed later on
 		if ($request->getVar('Direction') == 'down') {
 			$this->down();
 		} else {
@@ -55,16 +54,15 @@ class PopulateTimeZonesTask extends MigrationTask {
 			$timezones = DateTimeZone::listIdentifiers();
 
 			foreach ($timezones as $tz) {
-
 				// replace some strings to increase the readibility.
-				$tz = str_replace(
+				$tzNice = str_replace(
 					array_keys($this->replacementMap),
 					array_values($this->replacementMap),
 					$tz
 				);
 
 				// split the time zone information into the sections
-				$timezoneParts = explode('/', $tz);
+				$timezoneParts = explode('/', $tzNice);
 
 				// adding the new time zone
 				$tz = new TimeZone();
