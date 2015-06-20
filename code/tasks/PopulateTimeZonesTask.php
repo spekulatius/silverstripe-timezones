@@ -76,7 +76,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 		}
 
 		// check if the titles in the dataobjects need to be refreshed
-		if ($this->checkIfTitlesNeedRefresh()) $trhis->rebuildTitles();
+		if ($this->checkIfTitlesNeedRefresh()) $this->rebuildTitles();
 	}
 
 	/**
