@@ -28,15 +28,17 @@ If you want to use the dropdown field you can
 
 ```
 <?php
-class HomePage extends BaseHomePage {
-
+class MyPage extends Page {
+	/**
+	 * @var array
+	 */
 	private static $db = array(
 		'TimeZone' => 'Varchar'
 	);
 
-	private static $has_one = array(
-	);
-
+	/**
+	 * @return FieldList
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
