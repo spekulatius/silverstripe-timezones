@@ -13,12 +13,12 @@ class PopulateTimeZonesTask extends MigrationTask {
 	/**
 	 * @var string
 	 */
-	protected $title = "Populate time zones";
+	protected $title = 'Populate time zones';
 
 	/**
 	 * @var string
 	 */
-	protected $description = "Populates the default values for the time zones";
+	protected $description = 'Populates the default values for the time zones';
 
 	/**
 	 * replacement values for the time zones string
