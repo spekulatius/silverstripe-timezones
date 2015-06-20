@@ -27,6 +27,16 @@ The provided data comes from PHPs built-in function [`timezone_identifiers_list(
 If you want to use the dropdown field you can
 
 ```
+<?php
+class HomePage extends BaseHomePage {
+
+	private static $db = array(
+		'TimeZone' => 'Varchar'
+	);
+
+	private static $has_one = array(
+	);
+
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 

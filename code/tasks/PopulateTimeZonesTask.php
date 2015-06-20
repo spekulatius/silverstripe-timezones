@@ -33,26 +33,42 @@ class PopulateTimeZonesTask extends MigrationTask {
 	/**
 	 * {@inheritdoc}
 	 */
+	public function run($request) {
+		// I think there is a bug in MigrationTask::run()
+		// $request->param('Direction') does not is null
+		if ($request->getVar('Direction') == 'down') {
+			$this->down();
+		} else {
+			$this->up();
+		}
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
 	public function up() {
 		// only run this task if there aren't any time zones defined yet
 		if (TimeZone::get()->count() == 0) {
 			$this->message('Adding new time zone entries.');
 
 			// prepare the information provided by PHP
-			foreach (timezone_identifiers_list() as $timezone) {
-				// prepare the time zone information
-				$timezoneDetails = $timezone;
+			$timezones = DateTimeZone::listIdentifiers();
+
+			foreach ($timezones as $tz) {
 
 				// replace some strings to increase the readibility.
-				foreach ($this->replacementMap as $old => $new)
-					$timezoneDetails = str_replace($old, $new, $timezoneDetails);
+				$tz = str_replace(
+					array_keys($this->replacementMap),
+					array_values($this->replacementMap),
+					$tz
+				);
 
 				// split the time zone information into the sections
-				$timezoneParts = explode('/', $timezoneDetails);
+				$timezoneParts = explode('/', $tz);
 
 				// adding the new time zone
 				$tz = new TimeZone();
-				$tz->Identifier = $timezone;
+				$tz->Identifier = $tz;
 				$tz->Region = $timezoneParts[0];
 				$tz->Name = array_pop($timezoneParts);
 				$tz->write();
