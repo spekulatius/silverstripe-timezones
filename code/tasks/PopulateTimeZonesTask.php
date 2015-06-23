@@ -106,7 +106,10 @@ class PopulateTimeZonesTask extends MigrationTask {
 		// Update the Title field in the dataobjects. This saves the time to build the title dynamically each time.
 		foreach (TimeZone::get() as $tz) {
 			$newTitle = $tz->prepareTitle();
-			if ($newTitle != $tz->Title) $tz->Title = $newTitle; $tz->write();
+			if ($newTitle != $tz->Title) {
+				$tz->Title = $newTitle;
+				$tz->write();
+			}
 		}
 	}
 
