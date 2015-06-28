@@ -38,7 +38,7 @@ class TimeZone extends DataObject {
 	 *
 	 * @return string
 	 */
-	protected function prepareTitle() {
+	public function prepareTitle() {
 		$title = $this->format;
 
 		// replace the placeholders with actual data
