@@ -53,12 +53,12 @@ class PopulateTimeZonesTask extends MigrationTask {
 			// prepare the information provided by PHP
 			$timezones = DateTimeZone::listIdentifiers();
 
-			foreach ($timezones as $tz) {
+			foreach ($timezones as $timezone) {
 				// replace some strings to increase the readibility.
 				$tzNice = str_replace(
 					array_keys($this->replacementMap),
 					array_values($this->replacementMap),
-					$tz
+					$timezone
 				);
 
 				// split the time zone information into the sections
@@ -66,7 +66,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 
 				// adding the new time zone
 				$tz = new TimeZone();
-				$tz->Identifier = $tz;
+				$tz->Identifier = $timezone;
 				$tz->Region = $timezoneParts[0];
 				$tz->Name = array_pop($timezoneParts);
 				$tz->write();
