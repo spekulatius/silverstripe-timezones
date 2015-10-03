@@ -47,7 +47,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 	 */
 	public function up() {
 		// only run this task if there aren't any time zones defined yet
-		if (TimeZone::get()->count() == 0) {
+		if (TimeZoneData::get()->count() == 0) {
 			$this->message('Adding new time zone entries.');
 
 			// prepare the information provided by PHP
@@ -85,7 +85,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 	public function down() {
 		// remove the old time zones
 		$this->message('Removing old time zone entries.');
-		foreach (TimeZone::get() as $tz) $tz->delete();
+		foreach (TimeZoneData::get() as $tz) $tz->delete();
 	}
 
 	/**
@@ -95,7 +95,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 	 */
 	protected function checkIfTitlesNeedRebuild() {
 		// Assumption is that if the first one ($example) doesn't match (anymore) we need to refresh all.
-		$example = TimeZone::get()->first();
+		$example = TimeZoneData::get()->first();
 		return ($example->Title != $example->prepareTitle());
 	}
 
@@ -104,7 +104,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 	 */
 	protected function rebuildTitles() {
 		// Update the Title field in the dataobjects. This saves the time to build the title dynamically each time.
-		foreach (TimeZone::get() as $tz) {
+		foreach (TimeZoneData::get() as $tz) {
 			$newTitle = $tz->prepareTitle();
 			if ($newTitle != $tz->Title) {
 				$tz->Title = $newTitle;

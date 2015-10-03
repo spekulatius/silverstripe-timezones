@@ -31,10 +31,10 @@ class TimeZoneField extends DropdownField {
 		}
 
 		// if no source has been defined we assume the default time zones will be used
-		if (!$source) $source = TimeZone::get();
+		if (!$source) $source = TimeZoneData::get();
 
 		// default to setting defined in php configuration
-		if ($defaultTZ = TimeZone::get()->where("Identifier='".date_default_timezone_get()."'")->First()) {
+		if ($defaultTZ = TimeZoneData::get()->where("Identifier='".date_default_timezone_get()."'")->First()) {
 			if (!$emptyString) parent::setEmptyString($defaultTZ->Title);
 		}
 

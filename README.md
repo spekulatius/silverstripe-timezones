@@ -62,7 +62,7 @@ You can change the default format of the time zone in the dropdown menu by creat
 
 ```
 Injector:
-  TimeZone:
+  TimeZoneData:
     properties:
       format: '%Name (%Region)'
 ```

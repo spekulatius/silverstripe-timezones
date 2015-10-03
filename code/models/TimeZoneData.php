@@ -2,7 +2,7 @@
 /**
  * This DataObject defines a time zone entry in the database.
  */
-class TimeZone extends DataObject {
+class TimeZoneData extends DataObject {
 	/**
 	 * @var array
 	 */
