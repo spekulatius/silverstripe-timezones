@@ -65,7 +65,7 @@ class PopulateTimeZonesTask extends MigrationTask {
 				$timezoneParts = explode('/', $tzNice);
 
 				// adding the new time zone
-				$tz = new TimeZone();
+				$tz = new TimeZoneData();
 				$tz->Identifier = $timezone;
 				$tz->Region = $timezoneParts[0];
 				$tz->Name = array_pop($timezoneParts);
