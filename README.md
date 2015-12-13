@@ -1,4 +1,4 @@
-# Time zones module
+# SilverStripe Time zones FormField module
 
 Provides a reusable model and data of the time zones worldwide. In addition a dropdown field for a time zones selection is included.
 
