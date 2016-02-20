@@ -20,7 +20,7 @@ For the installation you can either download the package, unzip it into your pro
 
 ```
 composer require spekulatius/silverstripe-timezones
-./framework/sake dev/build
+php ./framework/cli-script.php dev/build
 ```
 
 The data will automaticially populated on dev build.
