@@ -1,4 +1,4 @@
-# SilverStripe Time zones FormField module
+# [SilverStripe Time zones FormField module](https://github.com/spekulatius/silverstripe-timezones)
 
 [![Build Status](https://api.travis-ci.org/spekulatius/silverstripe-timezones.svg?branch=master)](https://travis-ci.org/spekulatius/silverstripe-timezones)
 [![Latest Stable Version](https://poser.pugx.org/spekulatius/silverstripe-timezones/version.svg)](https://github.com/spekulatius/silverstripe-timezones/releases)
