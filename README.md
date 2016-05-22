@@ -35,32 +35,35 @@ If you want to use the dropdown field you can simply add a timezone to your db f
 
 ```
 <?php
-class MyPage extends Page {
-	/**
-	 * @var array
-	 */
-	private static $db = array(
-		'UserTimeZone' => 'TimeZone'
-	);
+class MyPage extends Page
+{
+    /**
+     * @var array
+     */
+    private static $db = array(
+        'UserTimeZone' => 'TimeZone'
+    );
 
-	/**
-	 * @return FieldList
-	 */
-	public function getCMSFields() {
-		$fields = parent::getCMSFields();
+    /**
+     * @return FieldList
+     */
+    public function getCMSFields()
+    {
+        $fields = parent::getCMSFields();
 
-		// ...
+        // ...
 
-		$fields->addFieldToTab(
-			'Root.Main',
-			TimeZoneField::create(
-				'TimeZone',
-				'My time zone'
-			)
-		);
+        $fields->addFieldToTab(
+            'Root.Main',
+            TimeZoneField::create(
+                'TimeZone',
+                'My time zone'
+            )
+        );
 
-		return $fields;
-	}
+        return $fields;
+    }
+}
 ```
 
 ## Format of time zone
