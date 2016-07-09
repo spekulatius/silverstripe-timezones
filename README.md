@@ -1,11 +1,4 @@
-# [SilverStripe Time zones FormField module](https://github.com/spekulatius/silverstripe-timezones)
-
-[![Build Status](https://api.travis-ci.org/spekulatius/silverstripe-timezones.svg?branch=master)](https://travis-ci.org/spekulatius/silverstripe-timezones)
-[![Latest Stable Version](https://poser.pugx.org/spekulatius/silverstripe-timezones/version.svg)](https://github.com/spekulatius/silverstripe-timezones/releases)
-[![Latest Unstable Version](https://poser.pugx.org/spekulatius/silverstripe-timezones/v/unstable.svg)](https://packagist.org/packages/spekulatius/silverstripe-timezones)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/spekulatius/silverstripe-timezones.svg)](https://scrutinizer-ci.com/g/spekulatius/silverstripe-timezones?branch=master)
-[![Total Downloads](https://poser.pugx.org/spekulatius/silverstripe-timezones/downloads.svg)](https://packagist.org/packages/spekulatius/silverstripe-timezones)
-[![License](https://poser.pugx.org/spekulatius/silverstripe-timezones/license.svg)](https://github.com/spekulatius/silverstripe-timezones/blob/master/license.md)
+# [SilverStripe Time zones FormField module](https://github.com/spekulatius/silverstripe-timezones) <br />[![Build Status](https://api.travis-ci.org/spekulatius/silverstripe-timezones.svg?branch=master)](https://travis-ci.org/spekulatius/silverstripe-timezones) [![Latest Stable Version](https://poser.pugx.org/spekulatius/silverstripe-timezones/version.svg)](https://github.com/spekulatius/silverstripe-timezones/releases) [![Latest Unstable Version](https://poser.pugx.org/spekulatius/silverstripe-timezones/v/unstable.svg)](https://packagist.org/packages/spekulatius/silverstripe-timezones) [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/spekulatius/silverstripe-timezones.svg)](https://scrutinizer-ci.com/g/spekulatius/silverstripe-timezones?branch=master) [![Total Downloads](https://poser.pugx.org/spekulatius/silverstripe-timezones/downloads.svg)](https://packagist.org/packages/spekulatius/silverstripe-timezones) [![License](https://poser.pugx.org/spekulatius/silverstripe-timezones/license.svg)](https://github.com/spekulatius/silverstripe-timezones/blob/master/license.md)
 
 Provides a reusable model and data of the time zones worldwide. In addition a dropdown field for a time zones selection is included.
 
