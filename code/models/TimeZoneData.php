@@ -1,4 +1,7 @@
 <?php
+
+use SilverStripe\ORM\DataObject;
+
 /**
  * This DataObject defines a time zone entry in the database.
  */
@@ -8,10 +11,10 @@ class TimeZoneData extends DataObject
      * @var array
      */
     private static $db = array(
-        'Identifier' => 'varchar(255)',
-        'Region' => 'varchar(255)',
-        'Name' => 'varchar(255)',
-        'Title' => 'varchar(255)',
+        'Identifier' => 'Varchar(255)',
+        'Region' => 'Varchar(255)',
+        'Name' => 'Varchar(255)',
+        'Title' => 'Varchar(255)',
     );
 
     /**

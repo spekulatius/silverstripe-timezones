@@ -1,4 +1,11 @@
 <?php
+
+use SilverStripe\Dev\MigrationTask;
+use SilverStripe\Dev\Debug;
+use SilverStripe\Control\Controller;
+use SilverStripe\ORM\DatabaseAdmin;
+use SilverStripe\ORM\DB;
+
 /**
  * Populates the default values for the time zones
  */

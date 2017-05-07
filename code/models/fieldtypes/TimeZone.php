@@ -1,8 +1,11 @@
 <?php
+
+use SilverStripe\ORM\FieldType\DBVarchar;
+
 /**
  * allows to define a timezone field directly in the $db
  */
-class TimeZone extends Varchar
+class TimeZone extends DBVarchar
 {
     /**
      * @param string $title
