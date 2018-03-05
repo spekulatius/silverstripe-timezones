@@ -1,5 +1,7 @@
 <?php
 
+namespace Spekulatius\TimeZones\Forms;
+
 use SilverStripe\Forms\DropdownField;
 
 /**
@@ -14,7 +16,7 @@ class TimeZoneField extends DropdownField
      *
      * @var array
      */
-    protected $extraClasses = array('dropdown');
+    protected $extraClasses = ['dropdown'];
 
     /**
      * @throws Exception

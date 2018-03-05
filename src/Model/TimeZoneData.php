@@ -1,5 +1,8 @@
 <?php
 
+namespace Spekulatius\TimeZones\Model;
+
+use Spekulatius\TimeZones\Task\PopulateTimeZonesTask;
 use SilverStripe\ORM\DataObject;
 
 /**
@@ -10,12 +13,12 @@ class TimeZoneData extends DataObject
     /**
      * @var array
      */
-    private static $db = array(
+    private static $db = [
         'Identifier' => 'Varchar(255)',
         'Region' => 'Varchar(255)',
         'Name' => 'Varchar(255)',
         'Title' => 'Varchar(255)',
-    );
+    ];
 
     /**
      * Defines the format of the title, which is used e.g. for the dropdown.

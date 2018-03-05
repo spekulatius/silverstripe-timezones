@@ -1,5 +1,8 @@
 <?php
 
+namespace Spekulatius\TimeZones\Task;
+
+use Spekulatius\TimeZones\Model\TimeZoneData;
 use SilverStripe\Dev\MigrationTask;
 use SilverStripe\Dev\Debug;
 use SilverStripe\Control\Controller;

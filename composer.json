@@ -1,7 +1,7 @@
 {
     "name": "spekulatius/silverstripe-timezones",
     "description": "Provides time zone data as well as a pre-populated dropdown field for SilverStripe",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
     "keywords": [
         "silverstripe",
@@ -10,15 +10,26 @@
         "data",
         "dropdown"
     ],
-    "authors": [
-        {
-            "name": "Peter Thaleikis",
-            "homepage": "https://github.com/spekulatius"
-        }
-    ],
+    "authors": [{
+        "name": "Peter Thaleikis",
+        "homepage": "https://github.com/spekulatius"
+    }],
     "require": {
-        "silverstripe/framework": "^4@dev"
+        "silverstripe/framework": "^4.0"
     },
+    "autoload": {
+        "psr-4": {
+            "Spekulatius\\TimeZones\\": "src/",
+            "Spekulatius\\TimeZones\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "support": {
         "issues": "https://github.com/spekulatius/silverstripe-timezones/issues"
     },

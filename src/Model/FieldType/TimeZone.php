@@ -1,6 +1,9 @@
 <?php
 
+namespace Spekulatius\TimeZones\Model\FieldType;
+
 use SilverStripe\ORM\FieldType\DBVarchar;
+use Spekulatius\TimeZones\Forms\TimeZoneField;
 
 /**
  * allows to define a timezone field directly in the $db
