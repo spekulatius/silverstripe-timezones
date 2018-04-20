@@ -13,11 +13,11 @@
     "authors": [
         {
             "name": "Peter Thaleikis",
-            "homepage": "https://github.com/spekulatius"
+            "homepage": "https://thaleikis.de"
         }
     ],
     "require": {
-        "php": ">=5.2.0",
+        "php": ">=5.6.0",
         "silverstripe/framework": "~3.1"
     },
     "support": {
