@@ -3,6 +3,8 @@
 namespace Spekulatius\TimeZones\Forms;
 
 use SilverStripe\Forms\DropdownField;
+use Spekulatius\TimeZones\Model\TimeZoneData;
+use SilverStripe\ORM\SS_List;
 
 /**
  * Provides a field for the time zones.
@@ -32,7 +34,7 @@ class TimeZoneField extends DropdownField
     public function __construct($name, $title = null, $source = null, $value = '', $form = null, $emptyString = null)
     {
         // if a source is given it should be a SS_List of TimeZone objects
-        if (!is_null($source) && !is_a($source, 'SS_List')) {
+        if (!is_null($source) && !is_a($source, SS_List::class)) {
             throw new Exception('$source must be null to use the provided values, or an SS_List of TimeZone objects');
             return false;
         }
@@ -43,7 +45,11 @@ class TimeZoneField extends DropdownField
         }
 
         // default to setting defined in php configuration
-        if ($defaultTZ = TimeZoneData::get()->where("Identifier='".date_default_timezone_get()."'")->First()) {
+        $defaultTZ = TimeZoneData::get()->filter([
+            'Identifier' => date_default_timezone_get()
+        ])->first();
+
+        if ($defaultTZ) {
             if (!$emptyString) {
                 parent::setEmptyString($defaultTZ->Title);
             }

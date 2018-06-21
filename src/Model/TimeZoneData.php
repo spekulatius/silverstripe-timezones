@@ -20,6 +20,8 @@ class TimeZoneData extends DataObject
         'Title' => 'Varchar(255)',
     ];
 
+    private static $table_name = 'TimeZoneData';
+
     /**
      * Defines the format of the title, which is used e.g. for the dropdown.
      *
