@@ -31,6 +31,8 @@ class PopulateTimeZonesTask extends MigrationTask
      */
     protected $description = 'Populates the default values for the time zones';
 
+    private static $segment = 'PopulateTimeZonesTask';
+
     /**
      * replacement values for the time zones string
      *

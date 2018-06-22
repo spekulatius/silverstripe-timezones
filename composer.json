@@ -23,6 +23,10 @@
             "Spekulatius\\TimeZones\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "lint": "phpcs src/ tests/",
+        "lint-clean": "phpcbf src/ tests/"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "2.x-dev"
