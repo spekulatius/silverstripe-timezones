@@ -1,4 +1,14 @@
 <?php
+
+namespace Spekulatius\TimeZones\Task;
+
+use Spekulatius\TimeZones\Model\TimeZoneData;
+use SilverStripe\Dev\MigrationTask;
+use SilverStripe\Dev\Debug;
+use SilverStripe\Control\Controller;
+use SilverStripe\ORM\DatabaseAdmin;
+use SilverStripe\ORM\DB;
+
 /**
  * Populates the default values for the time zones
  */
@@ -20,6 +30,8 @@ class PopulateTimeZonesTask extends MigrationTask
      * @var string
      */
     protected $description = 'Populates the default values for the time zones';
+
+    private static $segment = 'PopulateTimeZonesTask';
 
     /**
      * replacement values for the time zones string
