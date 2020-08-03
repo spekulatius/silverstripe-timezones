@@ -2,6 +2,7 @@
 
 namespace Spekulatius\TimeZones\Task;
 
+use DateTimeZone;
 use Spekulatius\TimeZones\Model\TimeZoneData;
 use SilverStripe\Dev\MigrationTask;
 use SilverStripe\Dev\Debug;
