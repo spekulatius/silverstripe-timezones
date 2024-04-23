@@ -15,8 +15,8 @@
         "homepage": "https://github.com/spekulatius"
     }],
     "require": {
-        "php": "^7.2",
-        "silverstripe/framework": "^4.0"
+        "php": "^8.1",
+        "silverstripe/framework": "^5.0"
     },
     "require-dev": {
         "symfony/thanks": "^1.0"
